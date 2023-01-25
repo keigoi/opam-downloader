@@ -18,25 +18,25 @@ for NAME in $PACKAGES; do
     cd $EXTRACT_DIR/$NAME
     case $FILE in
     *.tar.gz)
-      tar xf $FILEPATH || (echo "failed at $FILEPATH")
+      tar xf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *.tgz)
-      tar xf $FILEPATH || (echo "failed at $FILEPATH")
+      tar xf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *.tbz)
-      tar xf $FILEPATH || (echo "failed at $FILEPATH")
+      tar xf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *.tar.bz2)
-      tar xf $FILEPATH || (echo "failed at $FILEPATH")
+      tar xf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *.tar.xz)
-      tar xf $FILEPATH || (echo "failed at $FILEPATH")
+      tar xf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *.zip)
-      unzip -qf $FILEPATH || (echo "failed at $FILEPATH")
+      unzip -qf $FILEPATH || (echo "failed at $FILEPATH" | tee failed.txt)
       ;;
     *)
-      echo mv $NAME/$FILE has type $(file $FILE)
+      echo mv $NAME/$FILE has type $(file $FILE) | tee failed.txt
     esac
   done
 done
