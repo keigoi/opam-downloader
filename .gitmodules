@@ -1,0 +1,3 @@
+[submodule "opam-repository"]
+	path = opam-repository
+	url = https://github.com/ocaml/opam-repository.git
