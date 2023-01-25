@@ -1,3 +1,6 @@
 [submodule "opam-repository"]
 	path = opam-repository
 	url = https://github.com/ocaml/opam-repository.git
+[submodule "file-decompressor"]
+	path = file-decompressor
+	url = https://github.com/standoge/file-decompressor.git
